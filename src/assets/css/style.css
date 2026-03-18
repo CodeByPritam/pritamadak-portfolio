@@ -101,7 +101,7 @@ button.tab.active {
     font-family: 'Cascadia Code', monospace;
     font-size: 12px;
     color: var(--crust);
-    font-weight: 500;
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 4px;
