@@ -44,9 +44,9 @@ const formatNameAscciCode = () => {
     pre.textContent = lines.map(line => line.slice(minIndent)).join("\n");
 }
 
-// Start ALl the JS function
-(function() {
+// Start ALl the JS function execution
+document.addEventListener("DOMContentLoaded", function () {
     formatNameAscciCode();
     getCurrentYear();
     clockSystem();
-})();
+});
