@@ -43,15 +43,19 @@ span.cursor {
 
 /* ===== ASCII Art ===== */
 .ascii-art {
-    width: 70%;
-    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
     border-left: 2px solid var(--surface1);
+    margin-bottom: 22px;
+    padding-left: 16px;
 }
 
-.ascii-art img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.ascii-art pre {
+    font-family: 'Cascadia Code', monospace;
+    font-size: 6px;
+    line-height: 1.15;
+    color: #cba6f7;
+    letter-spacing: 0.8px;
 }
 
 /* ===== Neo Start ==== */
@@ -61,13 +65,23 @@ span.cursor {
     align-items: flex-start;
     gap: 32px;
     margin: 10px 0;
+    border-left: 2px solid var(--surface1);
+    padding-left: 16px;
 }
 
-.myart { width: 17%; }
+.myart { 
+    width: 13%;
+    display: flex;
+    border-radius: 50%;
+    border: 3px solid lab(31 2.7 -11.61);
+    overflow: hidden;
+}
+
 .myart img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 .nf-info {
@@ -82,19 +96,6 @@ span.cursor {
 .nf-v a{ color: var(--mauve); font-style: italic; text-decoration: underline; }
 .nf-sep { color: var(--overlay0); }
 .nf-k { color: var(--blue); min-width: 90px; }
-
-.color-palette {
-    display: flex;
-    gap: 4px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-}
-
-.swatch {
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-}
 
 /* ===== Divider ===== */
 .divider {

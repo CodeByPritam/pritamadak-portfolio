@@ -28,8 +28,25 @@ const clockSystem = () => {
     setInterval(tick, 1000);
 }
 
+// Format Name Ascci Code
+const formatNameAscciCode = () => {
+    const pre = document.querySelector(".ascii-art pre");
+    const lines = pre.textContent.split("\n");
+
+    // find minimum indentation
+    const minIndent = Math.min(
+        ...lines
+        .filter(line => line.trim())
+        .map(line => line.match(/^ */)[0].length)
+    );
+
+    // Final formating
+    pre.textContent = lines.map(line => line.slice(minIndent)).join("\n");
+}
+
 // Start ALl the JS function
 (function() {
+    formatNameAscciCode();
     getCurrentYear();
     clockSystem();
 })();
