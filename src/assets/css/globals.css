@@ -1,35 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
 
-@font-face {
-    font-family: 'Monaspace Neon';
-    src: url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Regular.woff2') format('woff2');
-    font-weight: 400; 
-    font-style: normal; 
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Monaspace Neon';
-    src: url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Bold.woff2') format('woff2');
-    font-weight: 700; 
-    font-style: normal; 
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Monaspace Argon';
-    src: url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceArgon-Regular.woff2') format('woff2');
-    font-weight: 400; 
-    font-style: normal; 
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Monaspace Argon';
-    src: url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceArgon-Light.woff2') format('woff2');
-    font-weight: 300; 
-    font-style: normal; 
-    font-display: swap;
-}
-
 :root {
 	--base:      #1e1e2e;
     --mantle:    #181825;
