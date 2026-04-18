@@ -68,28 +68,42 @@ export default {
     },
     skills: {
         prompt: 'ls --skills=proficiency',
-        comment: '// drwxr-xr-x dev staff',
+        comment: 'drwxr-xr-x dev staff',
         items: [
             {
                 name: 'HTML', 
                 icon: '/icons/html.svg', 
-                iconwidth: '16px', 
+                iconwidth: '20px', 
                 percentage: '80%', 
                 color: '#f0652a'
             },
             {
                 name: 'CSS', 
                 icon: '/icons/css.svg', 
-                iconwidth: '16px',
+                iconwidth: '21px',
                 percentage: '75%', 
                 color: '#4db5e1'
             },
             {
                 name: 'JavaScript', 
                 icon: '/icons/javascript.svg',
-                iconwidth: '16px',
+                iconwidth: '15px',
                 percentage: '80%', 
                 color: '#f7df1e'
+            },
+            {
+                name: 'TypeScript', 
+                icon: '/icons/typescript.svg',
+                iconwidth: '16px',
+                percentage: '40%', 
+                color: '#3178c6'
+            },
+            {
+                name: 'PostGreSQL', 
+                icon: '/icons/postgresql.svg',
+                iconwidth: '22px',
+                percentage: '60%', 
+                color: '#336791'
             },
         ],
     },
