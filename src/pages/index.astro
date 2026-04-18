@@ -1,13 +1,15 @@
 ---
+import MyResume from '../data/MyResume';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import About from '../components/about.astro';
 import Projects from '../components/projects.astro';
+import Skills from '../components/skills.astro';
 ---
 
 <BaseLayout title="~/pritamadak/dev/portfolio">
-	<About/>
-    <Projects/>
-    <section class="section" id="skills">Code 200 - Skills, Under development.</section>
+	<About data={MyResume} />
+    <Projects data={MyResume} />
+    <Skills data={MyResume} />
     <section class="section" id="education">Code 200 - Education, Under development.</section>
     <section class="section" id="experience">Code 200 - Experience, Under development.</section>
     <section class="section" id="contact">Code 200 - Contact, Under development.</section>

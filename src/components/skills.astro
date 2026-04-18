@@ -1,0 +1,48 @@
+---
+const { data } = Astro.props;
+---
+
+<section class="section" id="skills">
+
+   <!--- System: Prompt Block --->
+    <div class="prompt-block">
+        <div class="prompt-line">
+            <span class="p-user">{data.app.system.username}</span>
+            <span class="p-at">@</span>
+            <span class="p-host">{data.app.system.host}</span>
+            <span class="p-colon">:</span>
+            <span class="p-path">{data.app.system.path}</span>
+            <span class="p-git">({data.app.system.gitBranch})</span>
+            <span class="p-sym">❯</span>
+            <span class="arg">{data.skills.prompt}</span>
+        </div>
+    </div>
+
+    <!--- Output: Skills List --->
+    <div class="output">
+        <div class="output-line">
+            <span class="comment">// {data.skills.comment} — {data.skills.items.length} entries found</span>
+        </div>
+    </div>
+
+    <!--- Skills Grid --->
+    <div class="skills-grid">
+        {data.skills.items.map((elm) => (
+            <div class="skill-card" style={`--hover-color: ${elm.color};`}>
+                <div class="skill-header">
+                    <div class="skill-info">
+                        <div class="skill-icon" style={`width: ${elm.iconwidth}`}>
+                            <img src={elm.icon} alt={`${elm.name}.svg`}>
+                        </div>
+                        <div class="skill-name" style={`color: ${elm.color}`}>{elm.name}</div>
+                    </div>
+                    <div class="ptc">{elm.percentage}</div>
+                </div>
+                <div class="slill-track">
+                    <div class="skill-fill" style={`width: ${elm.percentage}; background: ${elm.color}`}></div>
+                </div>
+            </div>
+        ))}
+    </div>
+
+</section>
