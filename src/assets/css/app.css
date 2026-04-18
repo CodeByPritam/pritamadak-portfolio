@@ -124,3 +124,80 @@ span.cursor {
     color: var(--overlay0);
     font-style: italic;
 }
+
+/* ============================================================= */
+/* ===================== Projects Section ====================== */
+/* ============================================================= */
+.project-card:last-child { margin-bottom: 0px; }
+.project-card {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 9px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+}
+
+/* ========== Project Top ========== */
+.proj-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.proj-duration {
+    color: var(--overlay1);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.proj-links {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+a.pl.disabled, p.pl-separator.disabled { visibility: hidden; }
+a.pl {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    color: var(--overlay1);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+p.pl-separator {
+    color: var(--overlay1);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+i.fa-brands.fa-chrome { font-size: 12px; }
+i.fa-brands.fa-github { font-size: 13px; }
+
+/* ========== Project Name ========== */
+.proj-name {
+    color: var(--mauve);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: default;
+    margin-top: 6px;
+}
+
+/* ========== Project desc ========== */
+.proj-desc {
+    color: var(--subtext1);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 10px;
+}
