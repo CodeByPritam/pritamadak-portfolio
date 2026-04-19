@@ -21,26 +21,17 @@ const { data } = Astro.props;
     <!--- Output: Skills List --->
     <div class="output">
         <div class="output-line">
-            <span class="comment">// {data.skills.comment} — {data.skills.items.length} entries found</span>
+            <span class="comment">{data.skills.comment} — {data.skills.items.length} entries found.</span>
         </div>
     </div>
 
     <!--- Skills Grid --->
     <div class="skills-grid">
         {data.skills.items.map((elm) => (
-            <div class="skill-card" style={`--hover-color: ${elm.color};`}>
-                <div class="skill-header">
-                    <div class="skill-info">
-                        <div class="skill-icon" style={`width: ${elm.iconwidth}`}>
-                            <img src={elm.icon} alt={`${elm.name}.svg`}>
-                        </div>
-                        <div class="skill-name" style={`color: ${elm.color}`}>{elm.name}</div>
-                    </div>
-                    <div class="ptc">{elm.percentage}</div>
-                </div>
-                <div class="slill-track">
-                    <div class="skill-fill" style={`width: ${elm.percentage}; background: ${elm.color}`}></div>
-                </div>
+            <div class="skill-row">
+                <div class="skill-name" style={`color: ${elm.color}`}>{elm.name}</div>
+                <div class="long-line"></div>
+                <div class="percentage">{elm.percentage}</div>
             </div>
         ))}
     </div>

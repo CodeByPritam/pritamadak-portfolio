@@ -48,6 +48,7 @@ span.cursor {
     border-left: 2px solid var(--surface1);
     margin-bottom: 22px;
     padding-left: 16px;
+    padding-top: 2px;
 }
 
 .ascii-art pre {
@@ -135,15 +136,10 @@ span.cursor {
     border-radius: 9px;
     padding: 16px 20px;
     margin-bottom: 16px;
+    box-shadow: 1px 1px 8px #00000070;
 }
 
-/* ========== Project Top ========== */
-.proj-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
+/* ========== Project Duration ========== */
 .proj-duration {
     color: var(--overlay1);
     font-family: 'Cascadia Code', monospace;
@@ -152,44 +148,27 @@ span.cursor {
     display: flex;
     align-items: center;
     column-gap: 8px;
+    width: max-content;
 }
-
-.proj-links {
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-}
-
-a.pl.disabled, p.pl-separator.disabled { visibility: hidden; }
-a.pl {
-    display: flex;
-    align-items: center;
-    column-gap: 6px;
-    color: var(--overlay1);
-    font-family: 'Cascadia Code', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-p.pl-separator {
-    color: var(--overlay1);
-    font-family: 'Cascadia Code', monospace;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-i.fa-brands.fa-chrome { font-size: 12px; }
-i.fa-brands.fa-github { font-size: 13px; }
 
 /* ========== Project Name ========== */
 .proj-name {
-    color: var(--mauve);
+    color: var(--rosewater);
     font-family: 'Cascadia Code', monospace;
     font-size: 14px;
-    font-weight: 700;
-    cursor: default;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
     margin-top: 6px;
+}
+
+i.fa-solid.fa-link {
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+    color: var(--blue);
 }
 
 /* ========== Project desc ========== */
@@ -202,75 +181,76 @@ i.fa-brands.fa-github { font-size: 13px; }
     margin-top: 10px;
 }
 
+/* ========== TechStack ========== */
+.proj-techstack {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: var(--overlay0);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    column-gap: 8px;
+    width: max-content;
+}
+
+.tsname {
+    padding: 2px 10px;
+    background: #1e1e2e;
+    border-radius: 9px;
+    border: 2px solid var(--surface0);
+}
+
 /* =========================================================== */
 /* ===================== Skills Section ====================== */
 /* =========================================================== */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px 12px;
+    counter-reset: skill;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    border-left: 2px solid var(--surface1);
+    padding: 0 18px 0 16px;
 }
 
-.skill-card:hover { border: 1px solid var(--hover-color); }
-.skill-card {
-    background: var(--mantle);
-    border: 1px solid var(--surface0);
-    border-radius: 6px;
-    padding: 10px 12px 12px 12px;
-    cursor: default;
-    transition: all .15s ease-in-out;
-}
-
-/* ========== Skill Header ========== */
-.skill-header {
+.skill-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.skill-info {
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-}
-
-.skill-icon {
-    display: flex;
-    align-items: center;
-}
-
-.skill-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    counter-increment: skill;
 }
 
 /* ========== Skill Name ========== */
 .skill-name {
     font-family: 'Cascadia Code', monospace;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 1.7;
+    min-width: 150px;
 }
 
-.ptc {
-    font-family: 'Cascadia Code', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.7;
-    color: var(--overlay1);
+.skill-name::before {
+    content: counter(skill) ". ";
+    margin-right: 4px;
 }
 
-/* ========== Skill Track ========== */
-.slill-track {
-    height: 4px;
+.skill-name::after { content: ","; }
+.skill-name:last-child::after { content: ""; }
+
+/* ========== Percetage & line ========== */
+.long-line {
+    height: 2px;
     background: var(--surface1);
+    position: relative;
+    flex: 1;
     border-radius: 4px;
     overflow: hidden;
 }
 
-.skill-fill {
-    height: 100%;
-    border-radius: 4px;
+.percentage {
+    font-family: Cascadia Code, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--overlay1);
+    width: 50px;
+    text-align: right;
 }

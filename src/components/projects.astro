@@ -1,86 +1,47 @@
+---
+const { data } = Astro.props;
+---
+
 <section class="section" id="projects">
 
     <!--- System: Prompt Block --->
     <div class="prompt-block">
         <div class="prompt-line">
-            <span class="p-user">pritamadak</span>
+            <span class="p-user">{data.app.system.username}</span>
             <span class="p-at">@</span>
-            <span class="p-host">arch</span>
+            <span class="p-host">{data.app.system.host}</span>
             <span class="p-colon">:</span>
-            <span class="p-path">~/portfolio</span>
-            <span class="p-git">(master)</span>
+            <span class="p-path">{data.app.system.path}</span>
+            <span class="p-git">({data.app.system.gitBranch})</span>
             <span class="p-sym">❯</span>
-            <span class="arg">git log --all-projects</span>
+            <span class="arg">{data.projects.prompt}</span>
         </div>
     </div>
 
     <!--- Output: Commit History --->
     <div class="output">
         <div class="output-line">
-            <span class="comment">3f9c12 (HEAD → master, origin/master) feat: display all projects</span>
+            <span class="comment">{data.projects.comment}</span>
         </div>
     </div>
 
-    <!--- Projects Card: 01 --->
-    <div class="project-card">
-        <div class="proj-top">
+    {[...data.projects.items].sort((a, b) => b._idx - a._idx).map((elm) => (
+        <div class="project-card">
             <div class="proj-duration">
-                <div class="start">April, 2026</div>
+                <div class="start">{elm.duration.start}</div>
                 <p class="dash">-</p>
-                <div class="end">Ongoing</div>
+                <div class="end">{elm.duration.end}</div>
             </div>
-            <div class="proj-links">
-                <a class="pl" href="https://imprintjs.com" target="_blank"><i class="fa-brands fa-chrome"></i>Website</a>
-                <p class="pl-separator">|</p>
-                <a class="pl" href="https://github.com/imprintjs" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
-            </div>
-        </div>
-        <div class="proj-name">@imprintjs/imprintjs</div>
-        <div class="proj-desc">
-            A strictly typed, JS based, open source browser fingerprint library.
-            Featuring confidence scoring and built-in spoof detection,
-            targeting 90%+ accuracy with weighted signals and fuzzy matching.
-        </div>
-    </div>
-
-    <!--- Projects Card: 02 --->
-    <div class="project-card">
-        <div class="proj-top">
-            <div class="proj-duration">
-                <div class="start">April, 2026</div>
-                <p class="dash">-</p>
-                <div class="end">April, 2026</div>
-            </div>
-            <div class="proj-links">
-                <a class="pl disabled" href="/" target="_blank"><i class="fa-brands fa-chrome"></i>Website</a>
-                <p class="pl-separator disabled">|</p>
-                <a class="pl" href="https://github.com/codebypritam/sportvibe" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
+            <a class="proj-name" href={elm.githubLink} target="_blank">
+                {elm.name} <i class="fa-solid fa-link"></i>
+            </a>
+            <div class="proj-desc">{elm.desc}</div>
+            <div class="proj-techstack">
+                {elm.techStack.map((ts) => (
+                    <div class="tsname">{ts}</div>
+                ))}
             </div>
         </div>
-        <div class="proj-name">@CodeByPritam/sportvibe</div>
-        <div class="proj-desc">A Reels platform dedicated for different sports.</div>
-    </div>
-
-    <!--- Projects Card: 03 --->
-    <div class="project-card">
-        <div class="proj-top">
-            <div class="proj-duration">
-                <div class="start">Feb, 2026</div>
-                <p class="dash">-</p>
-                <div class="end">Mar, 2026</div>
-            </div>
-            <div class="proj-links">
-                <a class="pl disabled" href="/" target="_blank"><i class="fa-brands fa-chrome"></i>Website</a>
-                <p class="pl-separator disabled">|</p>
-                <a class="pl" href="https://github.com/codebypritam/savefrom" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
-            </div>
-        </div>
-        <div class="proj-name">@CodeByPritam/savefrom</div>
-        <div class="proj-desc">
-            A lightweight and secure API, 
-            that delivers structured JSON responses from multiple video platforms 
-            without requiring user login.
-        </div>
-    </div>
+    ))}
     
 </section>
